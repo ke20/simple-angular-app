@@ -1,0 +1,27 @@
+<h1>{{ title }}</h1>
+
+<p>This is the partial for view 1.</p>
+
+<div class="alert alert-error" ng-show="errors.length">
+	<div ng-repeat="errorMsg in errors">{{ errorMsg }}</div>
+</div>
+
+<form class="form" ng-submit="addMessage();">
+	<label for="title">Title: </label>
+	<input type="text" name="title" placeHolder="Title..." ng-model="message.title">
+	
+	<label for="content">Content: </label>
+	<input type="text" name="content" placeHolder="Content..." ng-model="message.content">
+	
+	<div class="control">
+		<input class="btn-primary" type="submit">
+	</div>
+</form>
+
+<div id="listMessages">
+	<div class="message well" ng-repeat="message in messages">
+		<div class="title">{{message.title}}</div>
+		<div class="content">{{message.content}}</div>
+	</div>
+</div>
+
